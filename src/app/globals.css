@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  background: #0F041C;
+:root {
+  background: #0f041c;
   color: white;
+  --font-satoshi: "Satoshi";
+}
+
+body {
+  font-family: var(--font-satoshi);
 }

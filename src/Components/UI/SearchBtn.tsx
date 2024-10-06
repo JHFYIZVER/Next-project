@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBtn = () => {
   return (
-    <button>
+    <button className="header-search-btn">
       <svg
         width="20"
         height="21"

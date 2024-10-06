@@ -1,16 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
-
 import Basket from "../UI/Basket";
-import "./Header.scss";
 import SearchBtn from "../UI/SearchBtn";
+import Logo from "../UI/Logo";
+import "./Header.scss";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef(null);
 
   return (
-    <header className="header max-w-screen-sm w-full flex justify-between items-center p-5">
+    <header
+      ref={headerRef}
+      className="header max-w-screen-sm w-full flex justify-between items-center p-6"
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={isOpen ? "burger active" : "burger"}
@@ -21,7 +26,7 @@ const Header = () => {
       </button>
       <nav className={isOpen ? "header-nav active" : "header-nav"}>
         <div>
-          <ul className="header-nav-list flex flex-col gap-8 cursor-pointer">
+          <ul className="header-nav-list flex flex-col gap-8 cursor-pointer z-10">
             <Link className="nav-list-item" href="/">
               Home
             </Link>
@@ -37,10 +42,8 @@ const Header = () => {
           </ul>
         </div>
       </nav>
-      <div className="logo font-bold text-xl">
-        <span className="text-blue">Holo</span>Gaze.
-      </div>
-      <div className="flex gap-7">
+      <Logo />
+      <div className="flex gap-7 z-0">
         <SearchBtn />
         <Basket />
       </div>

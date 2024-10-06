@@ -18,6 +18,9 @@ const config: Config = {
         xl: "1440px",
         xxl: "1920px",
       },
+      borderRadius: {
+        btn: "4px",
+      },
     },
   },
   plugins: [],

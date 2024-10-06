@@ -12,9 +12,10 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.4s ease-in;
+  z-index: 10;
 
   & > div {
-    background: #160237cb;
+    background: #160237f2;
     border-radius: 50%;
     width: 200vw;
     height: 200vw;
