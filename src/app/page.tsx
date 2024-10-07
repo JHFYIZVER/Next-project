@@ -12,6 +12,7 @@ import heroImg from "@/app/assets/hero image 1.png";
 import vrImg from "@/app/assets/VR.png";
 import iconEffect from "@/Animations/Main/icons";
 import buttonEffect from "@/Animations/Main/buttons";
+import BtnReadMyBlock from "@/Components/UI/Buttons/BtnReadMyBlock";
 
 export default function Home() {
   iconEffect();
@@ -77,6 +78,15 @@ export default function Home() {
           </li>
         </ul>
         <Image className="mx-auto" src={vrImg} alt="vrImg" />
+      </section>
+      <section className="about-creator p-6 flex flex-col gap-4">
+        <h2 className="font-bold text-2xl">Jane Wilson, Gaming Creator</h2>
+        <p className="text-sm">
+          A virtual headset creator is an individual or company that specializes
+          in designing and manufacturing virtual reality headsets, also known as
+          VR headsets.
+        </p>
+        <BtnReadMyBlock />
       </section>
     </main>
   );
