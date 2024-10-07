@@ -1,31 +1,39 @@
 "use client";
-import { useLayoutEffect } from "react";
-import gsap from "gsap";
+import titleEffect from "@/Animations/Main/title";
 import BtnVisitStore from "@/Components/UI/Buttons/BtnVisitStore";
 import ExploreBtn from "@/Components/UI/Buttons/ExploreBtn";
 import SocialMedia from "@/Components/UI/SocialMedia";
-import star from "@/Components/UI/star.svg";
+import star from "@/Components/UI/Img/star.svg";
+import line from "@/Components/UI/Img/line.svg";
+import tarainingIcon from "@/Components/UI/Img/iconTraining.svg";
+import studyIcon from "@/Components/UI/Img/iconStudy.svg";
 import Image from "next/image";
 import heroImg from "@/app/assets/hero image 1.png";
+import vrImg from "@/app/assets/VR.png";
+import iconEffect from "@/Animations/Main/icons";
+import buttonEffect from "@/Animations/Main/buttons";
 
 export default function Home() {
-  useLayoutEffect(() => {
-    gsap.from(".title", { opacity: 0, translateX: -300 });
-    gsap.to(".title", { opacity: 1, translateX: 0, transition: 6 });
-  });
+  iconEffect();
+  buttonEffect();
+  titleEffect();
 
-  
-  
-  
   return (
     <main className="max-w-screen-sm">
       <section className="flex flex-col gap-5 px-6">
-        <h2 className="text-sm text-white/80">Virtual Headsets</h2>
+        <h2 className="text-sm text-white/80 relative">
+          Virtual Headsets
+          <Image
+            className="line h-1 absolute -bottom-1 -left-4"
+            src={line}
+            alt="line"
+          />
+        </h2>
         <h1 className="title text-5xl font-bold">
           Experience a new dimension of reality
         </h1>
         <p className="text-sm flex gap-3 text-white/80">
-          <Image src={star} alt="star" />
+          <Image className="star" src={star} alt="star" />
           Step into the future with our virtual headset, come to life right
           before your eyes
         </p>
@@ -38,6 +46,37 @@ export default function Home() {
         <h2 className="mb-5 font-bold text-sm">FOLLOW US</h2>
         <SocialMedia />
         <Image src={heroImg} alt="heroImg" />
+        <hr />
+        <h4 className="flex gap-3">
+          <Image src={studyIcon} alt="heroImg" />
+          Enhanced Education
+        </h4>
+        <h4 className="flex gap-3">
+          <Image src={tarainingIcon} alt="heroImg" />
+          Training and Simulation
+        </h4>
+      </section>
+      <section className="features p-6 flex flex-col gap-6">
+        <h2 className="font-bold text-2xl">
+          Our Virtual Headsets Shine with Unique Features!
+        </h2>
+        <ul className="flex flex-col gap-4">
+          <li className="flex gap-3 items-start">
+            <Image className="fill-black" src={star} alt="star" />
+            High-resolution OLED or LCD screens: Provide sharp and clear
+            visuals.
+          </li>
+          <li className="flex gap-3 items-start">
+            <Image className="fill-black" src={star} alt="star" />
+            Inside-out tracking: Built-in sensors (cameras or other sensors).
+          </li>
+          <li className="flex gap-3 items-start">
+            <Image className="fill-black" src={star} alt="star" />
+            High-resolution OLED or LCD screens: Provide sharp and clear
+            visuals.
+          </li>
+        </ul>
+        <Image className="mx-auto" src={vrImg} alt="vrImg" />
       </section>
     </main>
   );

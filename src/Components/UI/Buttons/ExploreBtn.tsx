@@ -2,7 +2,7 @@ import React from "react";
 
 const ExploreBtn = () => {
   return (
-    <button className="border w-full py-4 rounded-btn flex gap-5 items-center justify-center">
+    <button className="explore border w-full py-4 rounded-btn flex gap-5 items-center justify-center">
       <svg
         width="18"
         height="18"

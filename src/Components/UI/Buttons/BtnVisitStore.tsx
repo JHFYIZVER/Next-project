@@ -2,8 +2,8 @@ import React from "react";
 
 const BtnVisitStore = () => {
   return (
-    <button className="bg-blue shadow-[0px_20px_49px_#3ddeed25] text-black w-full py-4 rounded-btn flex gap-5 items-center justify-center">
-      Visit Sttore
+    <button className="visit bg-blue shadow-[0px_20px_49px_#3ddeed25] text-black w-full py-4 rounded-btn flex gap-5 items-center justify-center">
+      Visit Store
       <svg
         width="14"
         height="14"
