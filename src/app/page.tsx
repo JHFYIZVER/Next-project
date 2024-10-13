@@ -10,14 +10,41 @@ import studyIcon from "@/Components/UI/Img/iconStudy.svg";
 import Image from "next/image";
 import heroImg from "@/app/assets/hero image 1.png";
 import vrImg from "@/app/assets/VR.png";
+import blogGirl from "@/app/assets/Girl.png";
+import twitPost from "@/app/assets/twit.jpg";
 import iconEffect from "@/Animations/Main/icons";
 import buttonEffect from "@/Animations/Main/buttons";
 import BtnReadMyBlock from "@/Components/UI/Buttons/BtnReadMyBlock";
+
+import EmblaCarousel from "@/Components/Carousel/EmblaCarousel";
+import "@/Components/Carousel/Embla.css";
+import { EmblaOptionsType } from "embla-carousel";
+import Views from "@/Components/UI/Views";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useStore } from "@/Store/posts";
+import Faq from "@/Components/UI/Faq";
+
+const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
 
 export default function Home() {
   iconEffect();
   buttonEffect();
   titleEffect();
+
+  const { posts, setPosts } = useStore();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/posts")
+      .then((res) => {
+        setPosts(res.data);
+        setIsLoading(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <main className="max-w-screen-sm">
@@ -87,6 +114,34 @@ export default function Home() {
           VR headsets.
         </p>
         <BtnReadMyBlock />
+        <div className="views flex items-center">
+          <Views />
+          <span className="font-medium">+258K Views</span>
+        </div>
+        <div>
+          <Image
+            className="relative left-0 right-5"
+            src={blogGirl}
+            alt="blogGirl"
+          />
+          <Image
+            className="relative left-0 right-0"
+            src={twitPost}
+            alt="twitPost"
+          />
+        </div>
+      </section>
+      <section className="top-games p-6 flex flex-col gap-4 overflow-hidden">
+        <h2 className="font-bold text-2xl">Top Games</h2>
+        <p className="text-base font-medium">
+          If you buy video 2 games, you will receive 1 video game for free,
+          along with a <span className="text-blue">50%</span> discount.
+        </p>
+        <EmblaCarousel isLoading={isLoading} slides={posts} options={OPTIONS} />
+      </section>
+      <section className="faq p-6 flex flex-col items-center">
+        <h2 className="font-bold text-2xl mb-6">F.A.Q.</h2>
+        <Faq />
       </section>
     </main>
   );

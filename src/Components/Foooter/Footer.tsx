@@ -2,7 +2,9 @@
 import React from "react";
 import Logo from "../UI/Logo";
 import SocialMedia from "../UI/SocialMedia";
-import BtnVisitStore from "../UI/Buttons/BtnVisitStore";
+import BtnSubscribe from "../UI/Buttons/BtnSubscribe";
+import line from "@/Components/UI/Img/line.svg";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -33,10 +35,21 @@ const Footer = () => {
         <p>
           Sure, please provide your email address to subscribe to newsletter
         </p>
-        <input type="text" />
-        <BtnVisitStore />
+        <input
+          className="w-full rounded-btn py-5 px-3 bg-transparent border border-[#fff]/20 outline-none"
+          placeholder="Enter your mail..."
+          type="text"
+        />
+        <BtnSubscribe />
+        <Image
+          className="line h-1 min-w-full"
+          src={line}
+          alt="line"
+        />
       </div>
-      <span className="text-center pt-5 text-white/80">© 2023 Your Company Name. All rights reserved.</span>
+      <span className="text-center pt-5 text-white/80">
+        © 2023 Your Company Name. All rights reserved.
+      </span>
     </footer>
   );
 };
