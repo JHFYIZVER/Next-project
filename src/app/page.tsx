@@ -24,6 +24,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useStore } from "@/Store/posts";
 import Faq from "@/Components/UI/Faq";
+import FeaturesList from "@/Components/UI/FeaturesList";
 
 const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
 
@@ -73,8 +74,14 @@ export default function Home() {
       <section className="follow-us p-6 flex flex-col gap-6">
         <h2 className="mb-5 font-bold text-sm">FOLLOW US</h2>
         <SocialMedia />
-        <Image src={heroImg} alt="heroImg" />
-        <hr />
+        <div>
+          <Image src={heroImg} alt="heroImg" />
+          <Image
+            className="line relative h-1 min-w-full -right-20"
+            src={line}
+            alt="line"
+          />
+        </div>
         <h4 className="flex gap-3">
           <Image src={studyIcon} alt="heroImg" />
           Enhanced Education
@@ -88,22 +95,7 @@ export default function Home() {
         <h2 className="font-bold text-2xl">
           Our Virtual Headsets Shine with Unique Features!
         </h2>
-        <ul className="flex flex-col gap-4">
-          <li className="flex gap-3 items-start">
-            <Image className="fill-black" src={star} alt="star" />
-            High-resolution OLED or LCD screens: Provide sharp and clear
-            visuals.
-          </li>
-          <li className="flex gap-3 items-start">
-            <Image className="fill-black" src={star} alt="star" />
-            Inside-out tracking: Built-in sensors (cameras or other sensors).
-          </li>
-          <li className="flex gap-3 items-start">
-            <Image className="fill-black" src={star} alt="star" />
-            High-resolution OLED or LCD screens: Provide sharp and clear
-            visuals.
-          </li>
-        </ul>
+        <FeaturesList />
         <Image className="mx-auto" src={vrImg} alt="vrImg" />
       </section>
       <section className="about-creator p-6 flex flex-col gap-4">
