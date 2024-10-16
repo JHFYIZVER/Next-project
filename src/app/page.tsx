@@ -37,7 +37,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/posts")
+      .get("http://localhost:3000/posts")
       .then((res) => {
         setPosts(res.data);
         setIsLoading(true);
@@ -74,10 +74,10 @@ export default function Home() {
       <section className="follow-us p-6 flex flex-col gap-6">
         <h2 className="mb-5 font-bold text-sm">FOLLOW US</h2>
         <SocialMedia />
-        <div>
+        <div className="relative max-w-fit">
           <Image src={heroImg} alt="heroImg" />
           <Image
-            className="line relative h-1 min-w-full -right-20"
+            className="line absolute h-2 min-w-full overflow-hidden "
             src={line}
             alt="line"
           />
@@ -110,14 +110,14 @@ export default function Home() {
           <Views />
           <span className="font-medium">+258K Views</span>
         </div>
-        <div>
+        <div className="min-w-full relative max-w-fit">
           <Image
-            className="relative left-0 right-5"
+            className="relative"
             src={blogGirl}
             alt="blogGirl"
           />
           <Image
-            className="relative left-0 right-0"
+            className="relative"
             src={twitPost}
             alt="twitPost"
           />

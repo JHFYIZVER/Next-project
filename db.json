@@ -3,22 +3,22 @@
     {
       "id": 1,
       "title": "Horizon : Call of the mountain",
-      "sourse": "../../app/assets/game/horizon.jpg"
+      "sourse": "./src/app/assets/Girl.png"
     },
     {
       "id": 2,
       "title": "Half - Life : ALYX",
-      "source": "../../app/assets/game/half-life.jpg"
+      "source": "/half-life.jpg"
     },
     {
       "id": 3,
       "title": "Fear & Hunger 2: Termina",
-      "source": "../../app/assets/game/fear.jpg"
+      "source": "/fear.jpg"
     },
     {
       "id": 4,
       "title": "Call of Duty : Coold War",
-      "source": "../../app/assets/game/call-of-duty.jpg"
+      "source": "/call-of-duty.jpg"
     }
   ]
 }

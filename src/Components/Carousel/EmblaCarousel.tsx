@@ -111,19 +111,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className="embla__container">
               {slides.map((index) => (
                 <div
-                  className="embla__slide max-w-[230px] max-h-[230px] md:max-w-[440px] md:max-h-[440px] flex flex-col w-full"
+                  className="embla__slide max-w-[240px] max-h-[230px] md:max-w-[440px] md:max-h-[440px] flex flex-col w-full"
                   key={index.id}
                 >
                   <div className="embla__parallax">
                     <div className="embla__parallax__layer">
                       <img
                         className="embla__slide__img embla__parallax__img  max-w-[230px] max-h-[230px] md:max-w-[440px] md:max-h-[440px] w-full"
-                        src="https://image.api.playstation.com/vulcan/img/rnd/202104/2219/pYdr0M7glBHKuIUNnjiR4CHw.jpg"
+                        src="https://upload.wikimedia.org/wikipedia/ru/thumb/0/0b/Call_Of_Duty_MW3_2023.jpg/800px-Call_Of_Duty_MW3_2023.jpg"
                         alt="sdsd"
+                        width={440}
+                        height={440}
                       />
                     </div>
                   </div>
-                  <span className="font-bold text-base">{index.title}</span>
+                  <span className="font-bold text-sm">{index.title}</span>
                 </div>
               ))}
             </div>
