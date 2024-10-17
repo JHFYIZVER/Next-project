@@ -118,10 +118,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     <div className="embla__parallax__layer">
                       <img
                         className="embla__slide__img embla__parallax__img  max-w-[230px] max-h-[230px] md:max-w-[440px] md:max-h-[440px] w-full"
-                        src="https://upload.wikimedia.org/wikipedia/ru/thumb/0/0b/Call_Of_Duty_MW3_2023.jpg/800px-Call_Of_Duty_MW3_2023.jpg"
+                        src={index.source}
                         alt="sdsd"
-                        width={440}
-                        height={440}
                       />
                     </div>
                   </div>
