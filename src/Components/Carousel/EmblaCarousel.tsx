@@ -123,7 +123,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       />
                     </div>
                   </div>
-                  <span className="font-bold text-sm">{index.title}</span>
+                  <span className="font-bold text-[clamp(14px,2.5vw,32px)]">{index.title}</span>
                 </div>
               ))}
             </div>

@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="header max-w-screen-sm w-full flex justify-between items-center p-6"
+      className="header max-w-screen-xl mx-auto w-full flex justify-between items-center p-6 lg:px-20 xl:px-[100px]"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
